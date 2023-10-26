@@ -48,7 +48,7 @@ Your license is contingent on Your compliance with the following conditions:
 
 - You include a copy of this license with any distribution by You of the Programs;
 
-- You do not charge your customers, end users, distributees or other third parties any additional fees for the distribution or use of the Programs; however, for clarity, if you comply with the foregoing condition, distribution or use of the Program as part of your for-fee product or service that adds substantial additional value is permitted; 
+- You do not charge your customers, end userEntities, distributees or other third parties any additional fees for the distribution or use of the Programs; however, for clarity, if you comply with the foregoing condition, distribution or use of the Program as part of your for-fee product or service that adds substantial additional value is permitted;
 
 - You do not remove markings or notices of either Oracle's or a licensor's proprietary rights from the Programs or Program Documentation;
 

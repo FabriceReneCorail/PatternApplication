@@ -1,6 +1,5 @@
 package com.example.pattern.api.controller;
 
-import com.example.pattern.api.Dto.UserRequestDto;
 import com.example.pattern.persistence.entity.User;
 import com.example.pattern.service.Filters.UserFilter;
 import com.example.pattern.service.UserService;
@@ -12,12 +11,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
-public class PatternController {
+public class UserController {
 
 
     private final UserService userService;
     @Autowired
-    public PatternController(UserService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 
@@ -34,8 +33,8 @@ public class PatternController {
 
     @GetMapping("/{filter}")
     public ResponseEntity<User> getListOfUsers(@PathVariable UserFilter lastName){
-        List<User> users = userService.getListOfUsers(lastName);
-        return ResponseEntity.ok((User) users);
+        List<User> userEntities = userService.getListOfUsers(lastName);
+        return ResponseEntity.ok((User) userEntities);
     }
 
 

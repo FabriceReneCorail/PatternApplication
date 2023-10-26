@@ -63,7 +63,7 @@ produced by an OASIS Technical Committee can be found on the OASIS
 website. Copies of claims of rights made available for publication and
 any assurances of licenses to be made available, or the result of an
 attempt made to obtain a general license or permission for the use of
-such proprietary rights by implementers or users of this OASIS Standards
+such proprietary rights by implementers or userEntities of this OASIS Standards
 Final Deliverable, can be obtained from the OASIS TC Administrator.
 OASIS makes no representation that any information or list of
 intellectual property rights will at any time be complete, or that any

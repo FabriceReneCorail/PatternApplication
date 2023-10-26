@@ -34,7 +34,7 @@ or royalty is hereby granted, provided that you include the following on ALL
 copies of the software and documentation or portions thereof, including
 modifications:
 
-   1.The full text of this NOTICE in a location viewable to users of the
+   1.The full text of this NOTICE in a location viewable to userEntities of the
    redistributed or derivative work.
 
    2.Any pre-existing intellectual property disclaimers, notices, or terms and

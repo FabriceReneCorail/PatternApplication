@@ -27,7 +27,7 @@ This installer creates the following directories:
 	* liquibase/examples/sql
 	* liquibase/examples/xml
 	
-**NOTE: JRE Install location for mac users is: liquibase/.install4j/jre.bundle/Contents/Home/bin/java**
+**NOTE: JRE Install location for mac userEntities is: liquibase/.install4j/jre.bundle/Contents/Home/bin/java**
 
 Files are:
 	* liquibase/ABOUT.txt

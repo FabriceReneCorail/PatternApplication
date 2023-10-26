@@ -9,12 +9,10 @@ import jakarta.persistence.Id;
 
 @Data
 @Entity
-public class User {
+public class Employee {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     private Long id;
-    private String name;
-    private String lastname;
-    private int age;
 }

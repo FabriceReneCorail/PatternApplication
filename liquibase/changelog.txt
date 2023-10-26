@@ -243,7 +243,7 @@ Changes in version 4.23.0 (2023.06.22)
 
 ### [OSS]
 * Checksums upgraded to v9, which improves whitespace handling in views, procedures, Liquibase Pro stored logic objects, and more.
- -- No action is required of users to benefit from this enhancement
+ -- No action is required of userEntities to benefit from this enhancement
  -- This release is backwards compatible with v8 checksums (found in 3.5 to 4.21.1 releases)
  -- Console message will inform you when your checksums have been updated
 * Liquibase Hub de-commissioned and de-coupled from Liquibase operations. From 4.23.0 forward, Liquibase will make no Hub reporting attempts.
@@ -441,7 +441,7 @@ Changes in version Liquibase v4.22.0 (2023.05.10)
 ## Notable Changes
 ###
 The checksum changes in Liquibase version 4.22.0 is a major change, which improves whitespace handling in views, procedures, Liquibase Pro stored logic objects, and more. New checksums are silently recalculated upon the initial run of Liquibase 4.22.0 or greater.
-No actions is required for the vast majority of users. However, for users who rely on the detection of a changed changeset or have complex workflows, it is recommended that you run liquibase clear-checksums with your current version BEFORE your first operation using the new 4.22.0 version against a database. Learn more at https://docs.liquibase.com/concepts/changelogs/changeset-checksums.html
+No actions is required for the vast majority of userEntities. However, for userEntities who rely on the detection of a changed changeset or have complex workflows, it is recommended that you run liquibase clear-checksums with your current version BEFORE your first operation using the new 4.22.0 version against a database. Learn more at https://docs.liquibase.com/concepts/changelogs/changeset-checksums.html
 
 ## API Breaking Changes
 * DAT-13285 - Fix CheckSum generation issues + improvement by @filipelautert in https://github.com/liquibase/liquibase/pull/3914
@@ -959,7 +959,7 @@ Changes in version Liquibase v4.18.0 (2022.11.30)
 
 
 #### [OSS] Liquibase Environment variables
-* Now free to all users, not just Pro users.
+* Now free to all userEntities, not just Pro userEntities.
 * Learn more at https://docs.liquibase.com/concepts/connections/liquibase-environment-variables.html
 
 
@@ -1086,9 +1086,9 @@ Changes in version 4.17.0 (2022.10.05)
   -  Learn more about flow here: [liquibase flow file and command](https://docs.liquibase.com/commands/flow/flow.html)
   -  If you want to provide feedback on this capability, please email mario@liquibase.com.
 
-* [PRO] Pro license users can now integrate Amazon S3 with Liquibase. You can extend Liquibase to use remote file locations to enable secure, centralized file management.
+* [PRO] Pro license userEntities can now integrate Amazon S3 with Liquibase. You can extend Liquibase to use remote file locations to enable secure, centralized file management.
   -  Learn more here: [S3 Remote Files](https://docs.liquibase.com/tools-integrations/remote-files/s3.html)
-* [PRO] Pro license users can use searchpath to find files located on S3 that cannot be found by an absolute path.
+* [PRO] Pro license userEntities can use searchpath to find files located on S3 that cannot be found by an absolute path.
   -  Learn more about the [Searchpath command here](https://docs.liquibase.com/concepts/changelogs/how-liquibase-finds-files.html).
   -  Learn more about [Searchpath with S3 here](https://docs.liquibase.com/tools-integrations/remote-files/searchpath.html).
 
@@ -1156,7 +1156,7 @@ Changes in version 4.16.0 (2022.09.08)
 
 ## New and Notable Capability
 * [LABS] The liquibase flow command and flow files are still available under the Liquibase Labs license. If you want to try and provide feedback on this capability, please email mario@liquibase.com
-* [PRO] The Quality Checks for Databases are now available to all Pro license users. These checks inspect your active database, or a liquibase-generated snapshot for compliance with your rules. Learn more at https://docs.liquibase.com/quality-checks
+* [PRO] The Quality Checks for Databases are now available to all Pro license userEntities. These checks inspect your active database, or a liquibase-generated snapshot for compliance with your rules. Learn more at https://docs.liquibase.com/quality-checks
 
 ## Enhancements
 * Introduced "contextFilter" and "labelFilter" replacement settings by @nvoxland in #2971
@@ -1458,7 +1458,7 @@ Notable Changes
 Liquibase 4.8.0 introduces a built-in SQLCMD integration that allows you to specify the runwith paramter sqlcmd custom executor to process
 complex SQL for MSSQL Server. Liquibase provides the liquibase.sqlcmd.conf file to pass arguments to your executor when running Liquibase Pro.
 
-For new and existing Liquibase Hub users, Liquibase 4.8.0 introduces the init hub command, used in Hub’s Getting Started on-boarding.
+For new and existing Liquibase Hub userEntities, Liquibase 4.8.0 introduces the init hub command, used in Hub’s Getting Started on-boarding.
 Users can get defaults and changelog files setup, working, and registered to Hub with just this one command.
 
 Enhancements
@@ -1653,7 +1653,7 @@ Windows and Mac/Linux Liquibase installers and the .tar.gz and .zip installation
  - Improved code and added tests in the `liquibase.util` package
  - Changed the default encoding to UTF-8. Added a new global `liquibase.fileEncoding` setting, which you can set as `--file-encoding=ASCII` in the CLI, `liquibase.fileEncoding: ASCII` in the liquibase.properties file, and `LIQUIBASE_FILE_ENCODING=ASCII` as an environment variable (#1445)
 
- - [PRO] Added a message to warn Liquibase Pro users when they have noncompliant Liquibase environment variables if the `strict` attribute is set to `true`
+ - [PRO] Added a message to warn Liquibase Pro userEntities when they have noncompliant Liquibase environment variables if the `strict` attribute is set to `true`
  - [PRO] Fixed the issue with Liquibase 4.4.0 and later versions to prompt if the Liquibase Pro license key is expired or invalid.
  - [PRO] Fixed Liquibase Pro SQL Plus _changesets_ failures with the Kerberos setup
  - [PRO] Fixed the `snapshot` command using for CockroachDB with Liquibase Pro license key
@@ -1721,7 +1721,7 @@ The following is a list of changes related to Liquibase Quality Checks:
 - PostgresDatabase should ignore addPrimaryKey clustered false #1779 
 - CLI no longer reading defaultsFile from classpath #1893
 - [PRO] Pro Enhancement Request: set 'splitStatements' to 'false' for Stored Logic changesets when generating a Formatted SQL changelog 
-- [PRO] Allow users to indicate names and location of their spool files when using runWith:sqlplus 
+- [PRO] Allow userEntities to indicate names and location of their spool files when using runWith:sqlplus
 - [PRO] Cannot update MariaDB expand based storage after first liquibase update 
 - [PRO] Liquibase PRO generateChangeLog error on Postgresql functions that have long signatures containing any '()' characters 
 
@@ -1838,7 +1838,7 @@ Changes in version 4.3.1 (2021.02.12)
 
 Changes in version 4.3.0 (2021.02.06)
 
-- MariaDB is now fully certified for Liquibase Pro users
+- MariaDB is now fully certified for Liquibase Pro userEntities
 - Added ability to register for Hub during update operations
 - Receive Liquibase Hub report links in the CLI after running commands
 - Fixed NPE when an output writer is null #1625
@@ -1932,7 +1932,7 @@ Changes in version 3.10.2 (2020.7.27)
 
  - Dependency cycle error during generateChangeLog with --diffTypes=tables,columns,data
  - liquibase maven:: unable to run tests on java > 8
- - Add Banner in log out put that directs users to online resources.
+ - Add Banner in log out put that directs userEntities to online resources.
  - GH PR#980 - fixed invalid carriage return coming from oracle ojdbc8 12.2.0.1
  - GH PR#976 - Changes databasechangelog sql to use legacy mode
  - [CORE-3525] Add support for java.sql.Types.TIMESTAMP_WITH_TIMEZONE.
@@ -2033,7 +2033,7 @@ Changes in version 4.0.0 Beta1 (2020.4.20)
 
 Changes in version 3.8.9 (2020.4.06)
 - Fixed an issue with how Liquibase handles SMALLINT columns in PostgreSQL when generating a changelog.
-- Improved `generateChangeLog` command to assume a `diffTypes` that includes "data" when the `dataOutputDirectory` parameter is used. Most users looking to export data as part of `generateChangeLog` can now simply use the `dataOuputDirectory` parameter without needing to specify `diffTypes`.
+- Improved `generateChangeLog` command to assume a `diffTypes` that includes "data" when the `dataOutputDirectory` parameter is used. Most userEntities looking to export data as part of `generateChangeLog` can now simply use the `dataOuputDirectory` parameter without needing to specify `diffTypes`.
 - Enabled the use of the `--schemas` parameter to work on either side of the `snapshot` command.
 - Enabled `generatechangelog` in PostgreSQL to correctly order `create`, `function`, and `trigger` statements.
 - Improved the use of dblink objects when using `diff` command.
@@ -2074,7 +2074,7 @@ Changes in version 3.8.5 (2020.1.13)
 Changes in version 3.8.4 (2019.12.23)
 
 - Fixed a 'Class not Found' exception error when using Java +9.
-- Fixed a 'Cannot Use Default Schema Name' error when users diff against an SQL Server snapshot file.
+- Fixed a 'Cannot Use Default Schema Name' error when userEntities diff against an SQL Server snapshot file.
 - Fixed an 'Unexpected type: java.util.Date' error when using a defaultValueDate attribute in a YAML changelog.
 
 Changes in version 3.8.3 (2019.12.19)
@@ -2092,7 +2092,7 @@ Changes in version 3.8.2 (2019.11.26)
 
 Changes in version 3.8.1 (2019.11.5)
 
-- [PRO] Oracle and SQL Server users can now reverse engineer database changes for stored logic such as triggers, functions & procedures using generateChangeLog, snapshot, diff, and diffChangeLog commands.
+- [PRO] Oracle and SQL Server userEntities can now reverse engineer database changes for stored logic such as triggers, functions & procedures using generateChangeLog, snapshot, diff, and diffChangeLog commands.
 - diff command writes to an external file using --outputFile flag
 - updateSQL command no longer outputs to liquibase.log
 - Cleaned up unexpected entries in diffchangelog.xml for SQL Server

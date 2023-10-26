@@ -29,7 +29,7 @@ public class PatternApplication {
 
         UserFilter filter = new UserFilter();
         filter.setAge(30);
-        List<User> users = userService.getListOfUsers(filter);
-        System.out.println("liste d'utilisateurs don't l'age est superieur à " + filter.getAge() +"ans"+": "+ users);
+        List<User> userEntities = userService.getListOfUsers(filter);
+        System.out.println("liste d'utilisateurs don't l'age est superieur à " + filter.getAge() +"ans"+": "+ userEntities);
     }
 }

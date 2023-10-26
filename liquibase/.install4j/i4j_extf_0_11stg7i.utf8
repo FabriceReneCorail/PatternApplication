@@ -245,7 +245,7 @@ WizardCaption=install4j Wizard
 JvmStartError=The Java(TM) VM could not be started. Please restart\nthe installation.You may use the parameter "/manual"\nto download or manually select a different VM.
 NoDirNameWithSpace=The directory name must not contain spaces.
 ConfirmReboot=To complete the installation you have to reboot your system. Do you want to reboot Windows now?
-ProgramGroupAllUsers=Create shortcuts for all users
+ProgramGroupAllUsers=Create shortcuts for all userEntities
 # {0} is a the application name
 FinishedLabelUnix=Setup has finished installing {0} on your computer. The application may be launched by executing the installed start scripts.
 WizardSelectLinkDir=Select Directory for Symlinks
@@ -485,7 +485,7 @@ CreateUserErrorUserExists=The user already exists.
 CreateUserSuccess=The user was created successfully.
 # Retired
 SetupAppRunningErrorAddOn=Setup has detected that the application is currently running.\n\nPlease close all instances of it now, then click OK to continue, or Cancel to exit.
-# A response file contains previous user input 
+# A response file contains previous user input
 HelpResponseFile=Use a response file
 # "Console" is a command line window, like a DOS box
 HelpConsoleMode=Run in console mode

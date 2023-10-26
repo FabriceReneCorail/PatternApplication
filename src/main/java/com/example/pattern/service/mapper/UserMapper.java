@@ -2,7 +2,6 @@ package com.example.pattern.service.mapper;
 
 import com.example.pattern.api.Dto.UserRequestDto;
 import com.example.pattern.persistence.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class UserMapper {
 
