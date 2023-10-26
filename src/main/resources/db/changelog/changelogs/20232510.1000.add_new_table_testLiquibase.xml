@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <changeSet  author="frc"  id="20232510.1145.add_new_table_employee.xml">
+        <createTable tableName="employee">
+            <column  name="NAME"  type="VARCHAR2(15)"/>
+            <column  name="JOB"  type="VARCHAR2(255)"/>
+            <column  name="SAL"  type="NUMBER(65)"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
