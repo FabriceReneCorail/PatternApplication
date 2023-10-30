@@ -1,7 +1,9 @@
 package com.example.pattern.service;
 
-import jakarta.persistence.EntityManager;
+import com.example.pattern.api.Dto.EmployeeDto;
 
-public class EmployeeService {
+public interface EmployeeService {
 
+    void createEmployee(EmployeeDto employeeDto);
+    void transfertEmployeeToOtherCompany(EmployeeDto employeeDto);
 }

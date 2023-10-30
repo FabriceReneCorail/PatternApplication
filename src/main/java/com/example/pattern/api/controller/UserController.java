@@ -10,33 +10,39 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class UserController {
-
-
     private final UserService userService;
+
     @Autowired
     public UserController(UserService userService) {
         this.userService = userService;
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<User> getUserById(@PathVariable Long id){
-        User userRequestDto = userService.getUserDtoById(id);
-        return ResponseEntity.ok(userRequestDto);
+    public ResponseEntity<UserRequestDto> getUserById(@PathVariable Long id) {
+        User user = userService.getUserDtoById(id);
+        UserRequestDto userResponseDto = userService.getUserById(user);
+        return ResponseEntity.ok(userResponseDto);
     }
     @GetMapping("/{lastName}")
-    public ResponseEntity<User> getUserByLastName(@PathVariable String lastName){
+    public ResponseEntity<User> getUserByLastName(@PathVariable String lastName) {
         User user = userService.getUserFromLastName(lastName);
         return ResponseEntity.ok(user);
     }
 
     @GetMapping("/{filter}")
-    public ResponseEntity<UserRequestDto> getListOfUsers(@PathVariable Filter lastName){
-        List<User> userEntities = userService.getListOfUsers(lastName);
+    public ResponseEntity<UserRequestDto> getListOfUsers(@PathVariable Filter filter) {
+        //filter are supposed to be used with the front end part and triggered by an Angular event . all the datas are in the back and it will just filter them
+        List<User> userEntities = userService.getListOfUsers(filter);
         return ResponseEntity.ok((UserRequestDto) userEntities);
     }
-
+    @PostMapping("/addUser")
+    public ResponseEntity newUser(@PathVariable UserRequestDto newUser) {
+        userService.addNewUser(newUser);
+        return (ResponseEntity) ResponseEntity.ok();
+    }
 
 }

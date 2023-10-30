@@ -10,11 +10,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 
+import jakarta.persistence.EntityManager;
+
 @Service
 public class FilterServiceImpl implements FiltersService {
 
+    private EntityManager entityManager;
     final UserRepository userRepository;
-    public FilterServiceImpl(final UserRepository userRepository) {
+    public FilterServiceImpl(final EntityManager entityManager, final UserRepository userRepository) {
+        this.entityManager = entityManager;
         this.userRepository = userRepository;
     }
     @Override
@@ -22,6 +26,9 @@ public class FilterServiceImpl implements FiltersService {
         final var users = userRepository.findAll();
         if(filter.getAge() != null){
         return users.stream().filter(e-> e.getAge() > filter.getAge()).collect(Collectors.toList());
+        }
+        if(filter.getSalary() != null){ // entity manager to navigate into the table and get the salary
+            entityManager.getCriteriaBuilder();
         }
         return null;
     }

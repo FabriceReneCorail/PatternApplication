@@ -10,9 +10,12 @@ import jakarta.persistence.Id;
 @Data
 @Entity
 public class Employee {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long id;
+    private String employeeName;
+    private String employeeLastName;
+    private Long employeeSalary;
+    private Long matricule;
+    private Jobs companyName;
 }
