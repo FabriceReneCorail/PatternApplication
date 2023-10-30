@@ -1,6 +1,5 @@
 package com.example.pattern.api.Dto;
 
-import com.example.pattern.persistence.entity.Jobs;
 import lombok.Data;
 
 @Data

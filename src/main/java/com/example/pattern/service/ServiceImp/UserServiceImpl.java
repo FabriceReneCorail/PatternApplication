@@ -13,7 +13,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import static com.example.pattern.service.mapper.Mapper.mapperEntitiesToResponseDto;
+import static com.example.pattern.service.mapper.Mapper.mappingEntitiesToResponseDto;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -56,7 +56,6 @@ public class UserServiceImpl implements UserService {
                 .filter(employee -> employee.getEmployeeLastName().equals(user.getLastname()))
                 .filter(employee -> employee.getEmployeeName().equals(user.getName()))
                 .findFirst().orElse(null);
-        // create response
-       return mapperEntitiesToResponseDto(mapper.mapEntityToDto(user),mapper.employeeMapperEntityToDto(getEmployee));
+       return mappingEntitiesToResponseDto(mapper.mapEntityToDto(user),mapper.employeeMapperEntityToDto(getEmployee));
     }
 }
