@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd">
+    <changeSet id="202326.1250.delete_employee_table.xml" author="frc">
+        <validCheckSum>8:0a0a4f9fefb782bdff1bddbfeed3e6d0</validCheckSum>
+        <preConditions onFail="MARK_RAN">
+            <tableExists tableName="Employee"/>
+        </preConditions>
+        <dropTable tableName="Employee"/>
+    </changeSet>
+</databaseChangeLog>

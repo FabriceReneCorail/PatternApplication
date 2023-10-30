@@ -1,7 +1,8 @@
 package com.example.pattern.api.controller;
 
+import com.example.pattern.api.Dto.UserRequestDto;
 import com.example.pattern.persistence.entity.User;
-import com.example.pattern.service.Filters.UserFilter;
+import com.example.pattern.service.Filters.Filter;
 import com.example.pattern.service.UserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +33,9 @@ public class UserController {
     }
 
     @GetMapping("/{filter}")
-    public ResponseEntity<User> getListOfUsers(@PathVariable UserFilter lastName){
+    public ResponseEntity<UserRequestDto> getListOfUsers(@PathVariable Filter lastName){
         List<User> userEntities = userService.getListOfUsers(lastName);
-        return ResponseEntity.ok((User) userEntities);
+        return ResponseEntity.ok((UserRequestDto) userEntities);
     }
 
 
