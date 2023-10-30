@@ -17,5 +17,7 @@ public class Employee {
     private String employeeLastName;
     private Long employeeSalary;
     private Long matricule;
-    private Jobs companyName;
+    private String companyName;
+
+    private String fonction;
 }

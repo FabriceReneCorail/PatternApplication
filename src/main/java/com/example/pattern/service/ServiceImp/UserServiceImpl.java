@@ -49,15 +49,14 @@ public class UserServiceImpl implements UserService {
         final var result = mapper.mapDtoToEntity(user);
         userRepository.save(result);
     }
-    public UserResponseDto getUserInfosByLastName(User lastName) {
+    public UserResponseDto getUserInfosByLastName(final User lastName) {
         final var user = userRepository.findByLastname(lastName.getLastname());
         final var getEmployee = employeeRepository.findAll()
                 .stream()
                 .filter(employee -> employee.getEmployeeLastName().equals(user.getLastname()))
                 .filter(employee -> employee.getEmployeeName().equals(user.getName()))
                 .findFirst().orElse(null);
-        // mapping to set
-        mapperEntitiesToResponseDto(user ,getEmployee);
-        return null;
+        // create response
+       return mapperEntitiesToResponseDto(mapper.mapEntityToDto(user),mapper.employeeMapperEntityToDto(getEmployee));
     }
 }

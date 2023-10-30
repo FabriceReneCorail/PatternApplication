@@ -5,8 +5,8 @@ import com.example.pattern.persistence.repository.EmployeeRepository;
 import com.example.pattern.service.EmployeeService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @Controller
 public class EmployeeController {
@@ -19,8 +19,9 @@ public class EmployeeController {
         this.repository = repository;
         this.service = service;
     }
+    //@Operation(operationId = "createEmployee", description = "")
     @PostMapping("/addEmployee")
-    public ResponseEntity createEmployeeAndUserIfDoesntExist(@PathVariable EmployeeDto dto){
+    public ResponseEntity createEmployeeAndUserIfDoesntExist(@RequestBody EmployeeDto dto){
         service.createEmployee(dto);
         return (ResponseEntity) ResponseEntity.ok();
     }

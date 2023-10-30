@@ -6,10 +6,9 @@ import com.example.pattern.persistence.entity.User;
 import com.example.pattern.persistence.repository.EmployeeRepository;
 import com.example.pattern.persistence.repository.UserRepository;
 import com.example.pattern.service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import static com.example.pattern.service.mapper.Mapper.employeeMapper;
+import static com.example.pattern.service.mapper.Mapper.employeeMapperDtoToEntity;
 
 @Service
 public class EmployeeServiceImpl implements EmployeeService {
@@ -24,7 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     public void createEmployee(final EmployeeDto employeeDto) {
         // create employee
-        final Employee employee = employeeMapper(employeeDto);
+        final Employee employee = employeeMapperDtoToEntity(employeeDto);
         repository.save(employee);
         // link employee to user if it's possible
         if(!findUserCommonPoint(employee)){

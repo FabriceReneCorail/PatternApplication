@@ -3,11 +3,8 @@ package com.example.pattern.service.mapper;
 import com.example.pattern.api.Dto.EmployeeDto;
 import com.example.pattern.api.Dto.UserRequestDto;
 import com.example.pattern.api.Dto.UserResponseDto;
-import com.example.pattern.persistence.entity.Companies;
 import com.example.pattern.persistence.entity.Employee;
-import com.example.pattern.persistence.entity.Jobs;
 import com.example.pattern.persistence.entity.User;
-import com.example.pattern.persistence.repository.EmployeeRepository;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -28,7 +25,7 @@ public class Mapper {
         return userEntity;
     }
 
-    public static Employee employeeMapper(final EmployeeDto employeeDto) {
+    public static Employee employeeMapperDtoToEntity(final EmployeeDto employeeDto) {
         final var employeeEntity = new Employee();
         employeeEntity.setEmployeeName(employeeDto.getName());
         employeeEntity.setMatricule(employeeEntity.getMatricule());
@@ -37,8 +34,22 @@ public class Mapper {
         return employeeEntity;
     }
 
-    public static UserResponseDto mapperEntitiesToResponseDto(User user , Employee employee){
+    public static EmployeeDto employeeMapperEntityToDto(final Employee employee) {
+        final var employeeDto = new EmployeeDto();
+        employeeDto.setName(employee.getEmployeeName());
+        employeeDto.setLastname(employeeDto.getLastname());
+        employeeDto.setMatricule(employee.getMatricule());
+        employeeDto.setCompany(employee.getCompanyName());
+        employeeDto.setSalary(employee.getEmployeeSalary());
+        employeeDto.setFonction(employee.getFonction());
+        return employeeDto;
+    }
+
+    public static UserResponseDto mapperEntitiesToResponseDto(final UserRequestDto user ,final EmployeeDto employee){
         // in the signature we have to had more param like job and companies
-        return null;
+        final var response = new UserResponseDto();
+        response.setUser(user);
+        response.setUserInfosAsEmployee(employee);
+        return response;
     };
 }
