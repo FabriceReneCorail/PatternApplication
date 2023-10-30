@@ -2,8 +2,12 @@ package com.example.pattern.service.mapper;
 
 import com.example.pattern.api.Dto.EmployeeDto;
 import com.example.pattern.api.Dto.UserRequestDto;
+import com.example.pattern.api.Dto.UserResponseDto;
+import com.example.pattern.persistence.entity.Companies;
 import com.example.pattern.persistence.entity.Employee;
+import com.example.pattern.persistence.entity.Jobs;
 import com.example.pattern.persistence.entity.User;
+import com.example.pattern.persistence.repository.EmployeeRepository;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -32,4 +36,9 @@ public class Mapper {
         employeeEntity.setEmployeeSalary(employeeEntity.getEmployeeSalary());
         return employeeEntity;
     }
+
+    public static UserResponseDto mapperEntitiesToResponseDto(User user , Employee employee){
+        // in the signature we have to had more param like job and companies
+        return null;
+    };
 }

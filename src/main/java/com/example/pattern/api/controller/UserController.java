@@ -1,6 +1,7 @@
 package com.example.pattern.api.controller;
 
 import com.example.pattern.api.Dto.UserRequestDto;
+import com.example.pattern.api.Dto.UserResponseDto;
 import com.example.pattern.persistence.entity.User;
 import com.example.pattern.service.Filters.Filter;
 import com.example.pattern.service.UserService;
@@ -28,9 +29,11 @@ public class UserController {
         return ResponseEntity.ok(userResponseDto);
     }
     @GetMapping("/{lastName}")
-    public ResponseEntity<User> getUserByLastName(@PathVariable String lastName) {
+    public ResponseEntity<UserResponseDto> getUserByLastName(@PathVariable String lastName) {
         User user = userService.getUserFromLastName(lastName);
-        return ResponseEntity.ok(user);
+        //agreggate infos user, employee, etc
+        UserResponseDto userResponseDto = userService.getUserInfosByLastName(user);
+        return ResponseEntity.ok(userResponseDto);
     }
 
     @GetMapping("/{filter}")
