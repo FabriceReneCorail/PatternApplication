@@ -10,14 +10,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class Mapper {
 
-    public UserRequestDto mapEntityToDto(final User entity) {
+    public static UserRequestDto mapEntityToDto(final User entity) {
         UserRequestDto dto = new UserRequestDto();
         dto.setAge(entity.getAge());
         dto.setName(entity.getName());
         dto.setLastName(entity.getLastname());
         return dto;
     }
-    public User mapDtoToEntity(final UserRequestDto dto) {
+    public static User mapDtoToEntity(final UserRequestDto dto) {
         User userEntity = new User();
         userEntity.setAge(dto.getAge());
         userEntity.setName(dto.getName());
@@ -46,7 +46,7 @@ public class Mapper {
     }
 
     public static UserResponseDto mappingEntitiesToResponseDto(final UserRequestDto user , final EmployeeDto employee){
-        // in the signature we have to had more param like job and companies
+        // in the signature we have to had more params like job and companies
         final var response = new UserResponseDto();
         response.setUser(user);
         response.setUserInfosAsEmployee(employee);
