@@ -13,6 +13,7 @@ Actually in this module have some api to handle the User datas (Filter, getall g
 
 
 "The DataConnectors Module"
-This module is as you understood help my app to store data on cloud (AWS S3 in progress)
+This module is as you understood help my app to store data on cloud (AWS S3 in progress , Excel CsvFile)
 atm i working on AWS S3 to store datas in buckets.
+For Excel Csv file im able to read it and now im gonna push parse datas try to create table H2 to mapp datas with the table i already have.
 
