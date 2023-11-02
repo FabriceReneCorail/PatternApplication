@@ -1,9 +1,10 @@
 package com.example.pattern.DataConnectors.Service;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import org.springframework.stereotype.Service;
+
 
 public interface ExcelService {
-    List<List<String>> readCSV() throws IOException;
+    List<List<String>> readCSV(File file) throws IOException;
 }

@@ -1,7 +1,7 @@
 package com.example.pattern.DataConnectors.Controller;
 
 import com.example.pattern.DataConnectors.Dto.BucketDto;
-import com.example.pattern.DataConnectors.Service.AwsS3Service;
+import com.example.pattern.DataConnectors.Service.AwsS3ServiceStub;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController("/AWS/")
 public class AwsS3Controller {
-    AwsS3Service awsS3Service;
+    AwsS3ServiceStub awsS3Service;
     @PostMapping("S3/createBucket")
     public ResponseEntity createBucket(@RequestBody BucketDto dto){
         awsS3Service.createBucket(dto);

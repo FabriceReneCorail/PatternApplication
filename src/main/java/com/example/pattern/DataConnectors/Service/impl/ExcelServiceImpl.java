@@ -10,14 +10,14 @@ import java.util.Arrays;
 import java.util.List;
 import javax.swing.*;
 import org.springframework.stereotype.Service;
-
+// i know that the CI gonna cry with java.io :)
 @Service
 public class ExcelServiceImpl implements ExcelService {
     private static final String COMMA_DELIMITER = ",";
     @Override
-    public List<List<String>> readCSV() throws IOException {
+    public List<List<String>> readCSV(File path) throws IOException {
         List<List<String>> records = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(selectFileFromComputer()))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(COMMA_DELIMITER);
@@ -26,9 +26,5 @@ public class ExcelServiceImpl implements ExcelService {
         }
         return records;
     }
-    private File selectFileFromComputer(){
-        JFileChooser jFileChooser = new JFileChooser();
-        jFileChooser.showOpenDialog(null);
-       return jFileChooser.getSelectedFile().getAbsoluteFile();
-    }
+
 }

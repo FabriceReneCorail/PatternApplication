@@ -3,13 +3,13 @@ package com.example.pattern.DataConnectors.Service.impl;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.Bucket;
 import com.example.pattern.DataConnectors.Dto.BucketDto;
-import com.example.pattern.DataConnectors.Service.AwsS3Service;
+import com.example.pattern.DataConnectors.Service.AwsS3ServiceStub;
 import com.example.pattern.DataConnectors.Service.Mapper.AwsS3Mapper;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AwsS3ServiceImpl implements AwsS3Service {
+public class AwsS3ServiceImpl implements AwsS3ServiceStub {
 
     public AmazonS3Client client = new AmazonS3Client();
     public AwsS3Mapper awsS3Mapper;
