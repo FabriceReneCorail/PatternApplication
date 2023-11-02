@@ -6,13 +6,14 @@ import com.example.pattern.DataConnectors.Dto.BucketDto;
 import com.example.pattern.DataConnectors.Service.AwsS3Service;
 import com.example.pattern.DataConnectors.Service.Mapper.AwsS3Mapper;
 import java.util.List;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AwsS3ServiceImpl implements AwsS3Service {
 
-    private AmazonS3Client client;
-    private AwsS3Mapper awsS3Mapper;
-    public AwsS3ServiceImpl(AmazonS3Client client, AwsS3Mapper awsS3Mapper) {
-        this.client = client;
+    public AmazonS3Client client = new AmazonS3Client();
+    public AwsS3Mapper awsS3Mapper;
+    public AwsS3ServiceImpl(AwsS3Mapper awsS3Mapper) {
         this.awsS3Mapper = awsS3Mapper;
     }
     @Override

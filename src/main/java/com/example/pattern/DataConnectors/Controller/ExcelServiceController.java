@@ -8,13 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController("/ExcelService/")
 public class ExcelServiceController {
-
     private ExcelService excelService;
-
     public ExcelServiceController(ExcelService excelService) {
         this.excelService = excelService;
     }
-
     @GetMapping("/readCsvFile")
     public ResponseEntity readCsvFile() throws IOException {
         excelService.readCSV();

@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import javax.swing.*;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ExcelServiceImpl implements ExcelService {
     private static final String COMMA_DELIMITER = ",";
     @Override

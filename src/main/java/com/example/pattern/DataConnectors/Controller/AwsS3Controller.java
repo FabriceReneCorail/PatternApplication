@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController("/AWS/")
 public class AwsS3Controller {
-    private AwsS3Service awsS3Service;
-    public AwsS3Controller(final AwsS3Service awsS3Service){
-        this.awsS3Service =  awsS3Service;
-    }
+    AwsS3Service awsS3Service;
     @PostMapping("S3/createBucket")
     public ResponseEntity createBucket(@RequestBody BucketDto dto){
         awsS3Service.createBucket(dto);
@@ -24,7 +21,6 @@ public class AwsS3Controller {
         awsS3Service.deleteBucket(dto);
         return ResponseEntity.ok().build();
     }
-
     @GetMapping("S3/GetAllBucket")
     public ResponseEntity getAllBucket(){
         awsS3Service.getAllBucket();
