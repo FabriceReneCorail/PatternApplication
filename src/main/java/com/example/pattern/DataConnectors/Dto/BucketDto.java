@@ -1,4 +1,4 @@
-package com.example.pattern.DataConnectors.Api.Dto;
+package com.example.pattern.DataConnectors.Dto;
 
 import com.amazonaws.services.s3.model.Owner;
 import java.util.Date;

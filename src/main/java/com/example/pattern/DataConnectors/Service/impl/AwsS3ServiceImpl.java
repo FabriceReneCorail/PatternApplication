@@ -1,10 +1,10 @@
-package com.example.pattern.DataConnectors.Api.Service.impl;
+package com.example.pattern.DataConnectors.Service.impl;
 
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.Bucket;
-import com.example.pattern.DataConnectors.Api.Dto.BucketDto;
-import com.example.pattern.DataConnectors.Api.Service.AwsS3Service;
-import com.example.pattern.DataConnectors.Api.Service.Mapper.AwsS3Mapper;
+import com.example.pattern.DataConnectors.Dto.BucketDto;
+import com.example.pattern.DataConnectors.Service.AwsS3Service;
+import com.example.pattern.DataConnectors.Service.Mapper.AwsS3Mapper;
 import java.util.List;
 
 public class AwsS3ServiceImpl implements AwsS3Service {
@@ -19,17 +19,13 @@ public class AwsS3ServiceImpl implements AwsS3Service {
     public List<Bucket> getAllBucket() {
         return client.listBuckets();
     }
-
     @Override
-    public Bucket createBucket(BucketDto dto) {
+    public Bucket createBucket(final BucketDto dto) {
        final var bucket = awsS3Mapper.mappingBucket(dto);
-        client.createBucket(bucket.getName());
-        // miss region ?
-        return null;
+        return client.createBucket(bucket.getName());
     }
-
     @Override
-    public void deleteBucket() {
-
+    public void deleteBucket(final BucketDto dto) {
+         client.deleteBucket(awsS3Mapper.mappingBucket(dto).getName());
     }
 }
