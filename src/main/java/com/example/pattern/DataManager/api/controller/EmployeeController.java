@@ -2,6 +2,7 @@ package com.example.pattern.DataManager.api.controller;
 
 import com.example.pattern.DataManager.api.Dto.EmployeeDto;
 import com.example.pattern.DataManager.service.EmployeeService;
+import io.swagger.v3.oas.annotations.Hidden;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -13,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/employee")
+@Hidden
+
 public class EmployeeController {
     // better to use constructor than Autowired
     private final EmployeeService service;

@@ -7,9 +7,12 @@ import com.example.pattern.DataManager.persistence.repository.EmployeeRepository
 import com.example.pattern.DataManager.persistence.repository.UserRepository;
 import com.example.pattern.DataManager.service.EmployeeService;
 import com.example.pattern.DataManager.service.mapper.Mapper;
+import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.stereotype.Service;
 
 @Service
+@Hidden
+
 public class EmployeeServiceImpl implements EmployeeService {
 
     private EmployeeRepository repository;
@@ -30,6 +33,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             newUserLinkWithEmployee.setName(employee.getEmployeeName());
             newUserLinkWithEmployee.setLastname(employee.getEmployeeLastName());
             userRepository.save(newUserLinkWithEmployee);
+            // create a reminder when the user will use keycloak to connect on App maybe ?
         }
     }
     private Boolean findUserCommonPoint(final Employee employee) {
