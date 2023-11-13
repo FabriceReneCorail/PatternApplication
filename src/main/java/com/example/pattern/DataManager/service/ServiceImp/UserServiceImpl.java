@@ -9,6 +9,7 @@ import com.example.pattern.DataManager.persistence.repository.UserRepository;
 import com.example.pattern.DataManager.service.FiltersService;
 import com.example.pattern.DataManager.service.UserService;
 import com.example.pattern.DataManager.service.mapper.Mapper;
+import io.swagger.v3.oas.annotations.Hidden;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 import static com.example.pattern.DataManager.service.mapper.Mapper.mappingEntitiesToResponseDto;
 
 @Service
+@Hidden
 public class UserServiceImpl implements UserService {
     private final EmployeeRepository employeeRepository;
     private UserRepository userRepository;

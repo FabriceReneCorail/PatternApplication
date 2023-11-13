@@ -6,6 +6,7 @@ import com.example.pattern.DataManager.persistence.entity.User;
 import com.example.pattern.DataManager.persistence.repository.UserRepository;
 import com.example.pattern.DataManager.service.Filters.Filter;
 import com.example.pattern.DataManager.service.FiltersService;
+import io.swagger.v3.oas.annotations.Hidden;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
@@ -13,6 +14,8 @@ import org.springframework.stereotype.Service;
 import jakarta.persistence.EntityManager;
 
 @Service
+@Hidden
+
 public class FilterServiceImpl implements FiltersService {
 
     private EntityManager entityManager;
