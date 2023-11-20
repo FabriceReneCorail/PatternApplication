@@ -1,6 +1,7 @@
-package com.example.pattern.DataBroker;
+package com.example.pattern.DataBroker.Service.Impl;
 
 
+import com.example.pattern.DataBroker.Service.ServiceRB;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.ConnectionFactory;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,7 @@ public class ServiceRBImpl implements ServiceRB {
     private final ConnectionFactory connectionFactory = new ConnectionFactory();
     private static final String QUEUE_NAME = "QueueTest";
     private final static String EXCHANGE_NAME = "ProducerToQueue";
+    private final ConsumeQueueImpl consumeQueue = new ConsumeQueueImpl();
 
     public ServiceRBImpl() {
     }

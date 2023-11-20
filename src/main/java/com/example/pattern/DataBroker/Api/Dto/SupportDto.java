@@ -1,9 +1,10 @@
-package com.example.pattern.DataBroker;
+package com.example.pattern.DataBroker.Api.Dto;
 
 
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
