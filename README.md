@@ -26,5 +26,6 @@ docker run -d --hostname my-rabbit -p 15672:15672 -p 5672:5672 --name some-rabbi
 
 This module will use RabbitMq: The controller reserve a command to fill a Queue.
 And Some services need some message from the queue to proceed.
-On my way to launche the server and test if my queue is filled :)
+On my way to launche the server and test if my queue is filled :) 
+ http://localhost:15672/#/ to have a look on the queue
 
