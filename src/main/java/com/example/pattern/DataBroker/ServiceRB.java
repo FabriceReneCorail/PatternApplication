@@ -4,6 +4,8 @@ import com.rabbitmq.client.Channel;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
+import org.springframework.stereotype.Service;
+
 
 public interface ServiceRB {
     Channel createChannel() throws IOException, TimeoutException;

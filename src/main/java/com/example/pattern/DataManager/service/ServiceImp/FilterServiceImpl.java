@@ -20,25 +20,37 @@ public class FilterServiceImpl implements FiltersService {
 
     private EntityManager entityManager;
     final UserRepository userRepository;
+
     public FilterServiceImpl(final EntityManager entityManager, final UserRepository userRepository) {
         this.entityManager = entityManager;
         this.userRepository = userRepository;
     }
+
     @Override
     public List<User> filteringByUser(final Filter filter) {
         final var users = userRepository.findAll();
-        if(filter.getAge() != null){
-        return users.stream().filter(e-> e.getAge() > filter.getAge()).collect(Collectors.toList());
+        if (filter.getAge() != null) {
+            return users.stream().filter(e -> e.getAge() > filter.getAge()).collect(Collectors.toList());
         }
-        if(filter.getSalary() != null){ // entity manager to navigate into the table and get the salary
-            entityManager.getCriteriaBuilder();
+        if (filter.getSalary() != null) { // entity manager to navigate into the table and get the salary
+
         }
         return null;
     }
+
+    private int findSalaryWithNameAndLastName(String name, String lastName) {
+        final var request = "Select e.salary From Employee Join e.user u Where u.name = :userName And u.lastName = :userLastName";
+        final var query = entityManager.createQuery(request)//
+                .setParameter("userName", name)//
+                .setParameter("lastName", lastName);
+        return query.executeUpdate();
+    }
+
     @Override
     public List<Employee> filteringByEmployee(final Filter filter) {
         return null;
     }
+
     @Override
     public List<Companies> filteringByCompany(final Filter filter) {
         return null;

@@ -8,7 +8,6 @@ import com.example.pattern.DataManager.persistence.entity.User;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @RestController()
@@ -19,14 +18,12 @@ public class UserController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-    // Test url ok http://localhost:8080/User/getUserById/3
     @GetMapping("/User/getUserById/{id}")
     public ResponseEntity<UserRequestDto> getUserById(@PathVariable Long id) {
         User user = userService.getUserDtoById(id);
         UserRequestDto userResponseDto = userService.getUserById(user);
         return ResponseEntity.ok(userResponseDto);
     }
-    //Test url ok http://localhost:8080/User/getUserByLastName/Brown
     @GetMapping("User/getUserByLastName/{lastName}")
     public ResponseEntity<UserResponseDto> getUserByLastName(@PathVariable String lastName) {
         User user = userService.getUserFromLastName(lastName);
@@ -45,14 +42,4 @@ public class UserController {
         userService.addNewUser(newUser);
         return (ResponseEntity) ResponseEntity.ok();
     }
-    //http://localhost:8080/User/addUser?name=John&lastName=Doe&age=30
-  /*  @GetMapping("/User/addUser")
-    public ResponseEntity newUser(@RequestParam String name, @RequestParam String lastName, @RequestParam int age) {
-        UserRequestDto newUser = new UserRequestDto();
-        newUser.setName(name);
-        newUser.setLastName(lastName);
-        newUser.setAge(age);
-        userService.addNewUser(newUser);
-        return ResponseEntity.ok().build();
-    }*/
 }

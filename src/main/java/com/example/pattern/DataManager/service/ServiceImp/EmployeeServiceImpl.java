@@ -1,6 +1,7 @@
 package com.example.pattern.DataManager.service.ServiceImp;
 
 import com.example.pattern.DataManager.api.Dto.EmployeeDto;
+import com.example.pattern.DataManager.api.Dto.InformationDto;
 import com.example.pattern.DataManager.persistence.entity.Employee;
 import com.example.pattern.DataManager.persistence.entity.User;
 import com.example.pattern.DataManager.persistence.repository.EmployeeRepository;
@@ -9,8 +10,6 @@ import com.example.pattern.DataManager.service.EmployeeService;
 import com.example.pattern.DataManager.service.mapper.Mapper;
 import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.stereotype.Service;
-
-import java.util.stream.Collectors;
 
 @Service
 @Hidden
@@ -44,12 +43,14 @@ public class EmployeeServiceImpl implements EmployeeService {
                                 .equals(employee.getEmployeeLastName()));
     }
     @Override
-    public EmployeeDto transfertEmployeeToOtherCompany(final EmployeeDto employeeDto) {
-        // recuperer la liste des companies existantes?
-        repository.findAll().stream().filter(employee -> Boolean.parseBoolean(employee.getCompanyName())).collect(Collectors.toList());
-        //checker que la demande de changement de compagnie est valide
-        //update les values sur le dto
-        // envoyer les infos à l'entité puis en base
-        return null;
+    public void transfertEmployeeToOtherCompany(final EmployeeDto employeeDto , InformationDto dto) {
+        //check if employee exists and if employee is in the right company.
+        //create request to change his company
+        //return the change and say something about the new company and why did, he changes
+    }
+
+    @Override
+    public void handleEmployeeSalary(EmployeeDto dto) {
+
     }
 }
