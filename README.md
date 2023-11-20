@@ -20,4 +20,5 @@ For Excel Csv file im able to read it and now im gonna push parse datas try to c
 "The DataBroker Module"
 This module will use RabbitMq: The controller reserve a command to fill a Queue.
 And Some services need some message from the queue to proceed.
+On my way to launche the server and test if my queue is filled :)
 
