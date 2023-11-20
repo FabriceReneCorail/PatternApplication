@@ -19,6 +19,10 @@ For Excel Csv file im able to read it and now im gonna push parse datas try to c
 
 "The DataBroker Module"
 https://www.rabbitmq.com/download.html
+
+docker run -d --name rabbitmq --ulimit nofile=1024:4096 --ulimit nproc=1024:2048 -p 5672:5672 -p 15672:15672 rabbitmq:3.9-management
+
+
 This module will use RabbitMq: The controller reserve a command to fill a Queue.
 And Some services need some message from the queue to proceed.
 On my way to launche the server and test if my queue is filled :)
