@@ -35,6 +35,7 @@ public class ServiceRBImpl implements ServiceRB {
                 throw new RuntimeException(e);
             }
         });
+        //count message.
     }
 
 
