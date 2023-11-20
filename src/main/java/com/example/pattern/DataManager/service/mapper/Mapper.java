@@ -15,6 +15,7 @@ public class Mapper {
         dto.setAge(entity.getAge());
         dto.setName(entity.getName());
         dto.setLastName(entity.getLastname());
+        dto.setEmail(entity.getEmail());
         return dto;
     }
     public static User mapDtoToEntity(final UserRequestDto dto) {
@@ -22,6 +23,7 @@ public class Mapper {
         userEntity.setAge(dto.getAge());
         userEntity.setName(dto.getName());
         userEntity.setLastname(dto.getLastName());
+        userEntity.setEmail(dto.getEmail());
         return userEntity;
     }
 
@@ -52,4 +54,5 @@ public class Mapper {
         response.setUserInfosAsEmployee(employee);
         return response;
     };
+
 }

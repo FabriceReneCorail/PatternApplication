@@ -13,4 +13,8 @@ public interface UserService {
     List<User> getListOfUsers(final Filter filter);
     void addNewUser(final UserRequestDto user);
     UserResponseDto getUserInfosByLastName(final User lastName);
+
+    List<UserRequestDto> getUsers();
+
+    void updateUser(UserRequestDto newUser);
 }

@@ -12,9 +12,9 @@ import jakarta.persistence.Id;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long id;
     private String name;
     private String lastname;
     private int age;
+    private String email;
 }

@@ -37,9 +37,21 @@ public class UserController {
         List<User> userEntities = userService.getListOfUsers(filter);
         return ResponseEntity.ok((UserRequestDto) userEntities);
     }
-    @GetMapping("/User/addUser")
-    public ResponseEntity newUser(@RequestBody UserRequestDto newUser) {
-        userService.addNewUser(newUser);
-        return (ResponseEntity) ResponseEntity.ok();
+    @GetMapping("Users")
+    public ResponseEntity<List<UserRequestDto>> getAllUser(){
+        List<UserRequestDto> users = userService.getUsers();
+        return ResponseEntity.ok(users);
     }
+    @PostMapping("/User/addUser")
+    public ResponseEntity<Void> newUser(@RequestBody UserRequestDto newUser) {
+        userService.addNewUser(newUser);
+        return ResponseEntity.ok().build();
+    }
+    @PostMapping("/User/updateUser")
+    public ResponseEntity<Void> updateUser(@RequestBody UserRequestDto newUser) {
+        userService.updateUser(newUser);
+        return ResponseEntity.ok().build();
+    }
+
+
 }
