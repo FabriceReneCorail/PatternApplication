@@ -10,6 +10,8 @@ import com.example.pattern.DataManager.service.mapper.Mapper;
 import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.stereotype.Service;
 
+import java.util.stream.Collectors;
+
 @Service
 @Hidden
 
@@ -42,7 +44,12 @@ public class EmployeeServiceImpl implements EmployeeService {
                                 .equals(employee.getEmployeeLastName()));
     }
     @Override
-    public void transfertEmployeeToOtherCompany(final EmployeeDto employeeDto) {
-
+    public EmployeeDto transfertEmployeeToOtherCompany(final EmployeeDto employeeDto) {
+        // recuperer la liste des companies existantes?
+        repository.findAll().stream().filter(employee -> Boolean.parseBoolean(employee.getCompanyName())).collect(Collectors.toList());
+        //checker que la demande de changement de compagnie est valide
+        //update les values sur le dto
+        // envoyer les infos à l'entité puis en base
+        return null;
     }
 }

@@ -17,16 +17,16 @@ import org.springframework.web.bind.annotation.RestController;
 @Hidden
 
 public class EmployeeController {
-    // better to use constructor than Autowired
     private final EmployeeService service;
     public EmployeeController(EmployeeService service) {
         this.service = service;
     }
+
     @Operation(operationId = "createEmployee", description = "add a new employee and control if user already exist if not create a user linked to that employee")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successfully added"),
             @ApiResponse(responseCode = "404", description = "Failed to add a new employee")})
-    @PostMapping("/addEmployee")
+    @PostMapping("/createEmployee")
     public ResponseEntity createEmployeeAndUserIfDoesntExist(@RequestBody EmployeeDto dto){
         service.createEmployee(dto);
         return (ResponseEntity) ResponseEntity.ok();
