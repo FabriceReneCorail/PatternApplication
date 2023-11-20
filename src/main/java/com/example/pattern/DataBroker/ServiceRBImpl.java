@@ -12,12 +12,13 @@ import org.springframework.stereotype.Service;
 public class ServiceRBImpl implements ServiceRB {
     private final ConnectionFactory connectionFactory = new ConnectionFactory();
     private static final String QUEUE_NAME = "QueueTest";
+    private final static String EXCHANGE_NAME = "Producer to Queue";
 
     public ServiceRBImpl() {
     }
 
     public Channel createChannel() throws IOException, TimeoutException {
-        final var host = "amqp.pattern.com";
+        final var host = "localhost";
         connectionFactory.setHost(host);
        return connectionFactory.newConnection().createChannel();
     }
@@ -27,6 +28,7 @@ public class ServiceRBImpl implements ServiceRB {
         messages.stream().map(String::getBytes).forEach(messageBytes -> {
             try {
                 channel.basicPublish("Producer to Queue", QUEUE_NAME, null, messageBytes);
+                channel.exchangeDeclare(EXCHANGE_NAME, "direct");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
