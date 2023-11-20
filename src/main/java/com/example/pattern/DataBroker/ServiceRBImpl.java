@@ -3,16 +3,17 @@ package com.example.pattern.DataBroker;
 
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.ConnectionFactory;
+import org.springframework.stereotype.Service;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeoutException;
-import org.springframework.stereotype.Service;
 
 @Service
 public class ServiceRBImpl implements ServiceRB {
     private final ConnectionFactory connectionFactory = new ConnectionFactory();
     private static final String QUEUE_NAME = "QueueTest";
-    private final static String EXCHANGE_NAME = "Producer to Queue";
+    private final static String EXCHANGE_NAME = "ProducerToQueue";
 
     public ServiceRBImpl() {
     }
@@ -27,8 +28,7 @@ public class ServiceRBImpl implements ServiceRB {
         final var channel = createChannel();
         messages.stream().map(String::getBytes).forEach(messageBytes -> {
             try {
-                channel.basicPublish("Producer to Queue", QUEUE_NAME, null, messageBytes);
-                channel.exchangeDeclare(EXCHANGE_NAME, "direct");
+                channel.basicPublish(EXCHANGE_NAME, QUEUE_NAME, null, messageBytes);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

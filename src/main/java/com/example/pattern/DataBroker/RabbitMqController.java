@@ -1,15 +1,13 @@
 package com.example.pattern.DataBroker;
 
-
-import java.io.IOException;
-import java.util.concurrent.TimeoutException;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import jakarta.validation.Valid;
+import java.io.IOException;
+import java.util.concurrent.TimeoutException;
 
 @RestController("Producer")
 public class RabbitMqController {
