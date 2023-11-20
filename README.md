@@ -18,6 +18,7 @@ atm i working on AWS S3 to store datas in buckets.
 For Excel Csv file im able to read it and now im gonna push parse datas try to create table H2 to mapp datas with the table i already have.
 
 "The DataBroker Module"
+https://www.rabbitmq.com/download.html
 This module will use RabbitMq: The controller reserve a command to fill a Queue.
 And Some services need some message from the queue to proceed.
 On my way to launche the server and test if my queue is filled :)
