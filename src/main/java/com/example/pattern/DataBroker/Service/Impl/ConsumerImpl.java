@@ -1,15 +1,14 @@
 package com.example.pattern.DataBroker.Service.Impl;
 
-import com.example.pattern.DataBroker.Service.ConsumerQueue;
+import com.example.pattern.DataBroker.Service.Consumer;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
-
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-public class ConsumeQueueImpl implements ConsumerQueue {
+public class ConsumerImpl implements Consumer {
     private static final String QUEUE_NAME = "QueueTest";
     private final static String EXCHANGE_NAME = "ProducerToQueue";
 
