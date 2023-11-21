@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
-public class SupportDto {
+public class MessageDto {
     private String name;
     private List<String> messages;
 }

@@ -1,6 +1,6 @@
 package com.example.pattern;
 
-import com.example.pattern.DataBroker.Service.Impl.ConsumeQueueImpl;
+import com.example.pattern.DataBroker.Service.Impl.ConsumerImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -14,7 +14,7 @@ import java.util.concurrent.TimeoutException;
 @SpringBootApplication
 public class PatternApplication {
 
-    private final ConsumeQueueImpl consumeQueue = new ConsumeQueueImpl();
+    private final ConsumerImpl consumeQueue = new ConsumerImpl();
 
     public static void main(String[] args) throws IOException, TimeoutException {
         SpringApplication.run(PatternApplication.class, args);
@@ -28,7 +28,7 @@ public class PatternApplication {
                 } catch (IOException | TimeoutException e) {
                     e.printStackTrace();
                 }
-            }, 0, 30, TimeUnit.SECONDS);
+            }, 0, 2, TimeUnit.SECONDS);
         }
     }
 
