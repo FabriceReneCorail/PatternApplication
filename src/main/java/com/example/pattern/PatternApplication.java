@@ -19,17 +19,7 @@ public class PatternApplication {
     public static void main(String[] args) throws IOException, TimeoutException {
         SpringApplication.run(PatternApplication.class, args);
     }
-        @PostConstruct
-        public void scheduleMessageConsumption() {
-            ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
-            executorService.scheduleAtFixedRate(() -> {
-                try {
-                    consumeQueue.consumeMessages();
-                } catch (IOException | TimeoutException e) {
-                    e.printStackTrace();
-                }
-            }, 0, 2, TimeUnit.SECONDS);
-        }
+
     }
 
 
