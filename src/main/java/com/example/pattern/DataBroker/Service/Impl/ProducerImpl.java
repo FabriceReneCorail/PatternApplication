@@ -18,7 +18,7 @@ public class ProducerImpl implements Producer {
 
     public ProducerImpl() {
     }
-
+ // https://spring.io/guides/gs/messaging-rabbitmq/
     public void publishMessage(List<String> messages) throws IOException, TimeoutException {
         connectionFactory.setHost("localhost");
         try {
